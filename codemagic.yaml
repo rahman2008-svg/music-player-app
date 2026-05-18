@@ -6,6 +6,8 @@ workflows:
       flutter: stable
 
     scripts:
+      - git submodule deinit -f external/ffmpeg_build || true
+      - git rm -f external/ffmpeg_build || true
       - git submodule update --init --recursive || true
       - flutter pub get
       - flutter build apk --release
