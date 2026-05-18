@@ -6,6 +6,7 @@ workflows:
       flutter: stable
 
     scripts:
+      - git submodule update --init --recursive || true
       - flutter pub get
       - flutter build apk --release
 
